@@ -1,0 +1,53 @@
+server:
+  port: 8083
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/mydatabase
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: konrad
+    password: secret
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: test
+    password: test
+
+
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            client-id: CurrencyExchangeApi
+            #            client-secret: my-client-secret
+            scope: openid, profile, email
+        provider:
+          keycloak:
+            token-uri: ${keycloak.auth-server-url}/realms/${keycloak.realm}/protocol/openid-connect/token
+            authorization-uri: ${keycloak.auth-server-url}/realms/${keycloak.realm}/protocol/openid-connect/auth
+            user-info-uri: ${keycloak.auth-server-url}/realms/${keycloak.realm}/protocol/openid-connect/userinfo
+            jwk-set-uri: ${keycloak.auth-server-url}/realms/${keycloak.realm}/protocol/openid-connect/certs
+
+
+#
+#    roles:
+#      keycloak: ROLE_
+
+
+
+
+
+rabbit:
+  email-queue: email_queue
+
+
+
+
+
+
+
+
+
+
+

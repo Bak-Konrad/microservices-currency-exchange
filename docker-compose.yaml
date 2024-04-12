@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  rabbit:
+    image: bitnami/rabbitmq
+    environment:
+      - RABBITMQ_USERNAME=test
+      - RABBITMQ_PASSWORD=test
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    networks:
+      - kantor
+
+networks:
+  kantor:
+    driver: bridge
