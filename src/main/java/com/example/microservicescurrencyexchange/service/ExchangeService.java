@@ -13,7 +13,7 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-public class ExchangeService {// TODO: 05.12.2023 wywalić do jednego serwisu, bardziej ten drugi wywalic do tego :
+public class ExchangeService {
     private final ExchangeRepository exchangeRepository;
     private final RateMapperMapstruct rateMapper;
 
@@ -28,7 +28,5 @@ public class ExchangeService {// TODO: 05.12.2023 wywalić do jednego serwisu, b
         Rate rate = exchangeRepository.findByCode(currency).orElseThrow();
         return rateMapper.mapToDto(rate);
     }
-
-
 
 }

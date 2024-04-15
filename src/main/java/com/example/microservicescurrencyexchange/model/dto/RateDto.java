@@ -9,9 +9,7 @@ import java.math.BigDecimal;
 @Builder
 public class RateDto {
     private String currency;
-
     private String code;
     private BigDecimal bid;
-
     private BigDecimal ask;
 }

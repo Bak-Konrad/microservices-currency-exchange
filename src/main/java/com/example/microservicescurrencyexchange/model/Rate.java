@@ -16,7 +16,6 @@ public class Rate {
     @Id
     private String code;
     private BigDecimal bid;
-
     private BigDecimal ask;
 
 }

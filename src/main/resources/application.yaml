@@ -13,7 +13,6 @@ spring:
     username: test
     password: test
 
-
   security:
     oauth2:
       client:
@@ -28,16 +27,8 @@ spring:
             authorization-uri: ${keycloak.auth-server-url}/realms/${keycloak.realm}/protocol/openid-connect/auth
             user-info-uri: ${keycloak.auth-server-url}/realms/${keycloak.realm}/protocol/openid-connect/userinfo
             jwk-set-uri: ${keycloak.auth-server-url}/realms/${keycloak.realm}/protocol/openid-connect/certs
-
-
-#
-#    roles:
-#      keycloak: ROLE_
-
-
-
-
-
+  jpa:
+    open-in-view: false
 rabbit:
   email-queue: email_queue
 
